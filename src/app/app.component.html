@@ -1,0 +1,51 @@
+<!--<app-register-user></app-register-user>-->
+
+
+<div class="position-relative" style="min-height: calc(100vh + 100px)">
+  <div [ngClass]="!commonUtil.getLoginUser() ? 'row p-3 bg-black' : 'row p-3 bg-100px'"> <!-- Am adaugat padding la navigatie -->
+<!--  <div class="row p-3"   > &lt;!&ndash; Am adaugat padding la navigatie &ndash;&gt;-->
+    <div class="col-sm-8"  style="position: relative; z-index: 3">
+      <a *ngIf="!commonUtil.getLoginUser()" routerLink="/home" routerLinkActive="active"
+         class="btn btn-outline-light">Home</a>
+
+      <!--      Am grupat optiunile de navigare care apar in momentul logarii:-->
+      <div *ngIf="commonUtil.getLoginUser()" class="d-flex gap-2">
+        <a routerLink="/tickets" routerLinkActive="active" class="btn btn-close-white">All Tickets</a>
+        <a routerLink="/addTicket" routerLinkActive="active" class="btn btn-close-white">Add Ticket in System</a>
+        <a routerLink="/home" routerLinkActive="active" class="btn btn-close-white">Home</a>
+      </div>
+
+
+    </div>
+    <div class="col-sm-4" style="text-align: right;padding-left: 10px">
+
+      <!-- Am grupat si spatiat butoanele de login/register, de asemenea am facut register mai vizibil, cum este pe site-uri reale -->
+      <div *ngIf="!commonUtil.getLoginUser()" class="login-options d-flex gap-1" style="position: relative; z-index: 3">
+        <a routerLink="/register" routerLinkActive="active" class="btn btn-outline-light">Register</a>
+        <a routerLink="/login" routerLinkActive="active" class="btn btn-close-white">Login</a>
+      </div>
+
+      <button *ngIf="commonUtil.getLoginUser()" class="btn btn-close-white" (click)="logout($event)">Logout
+      </button>
+    </div>
+  </div>
+
+
+  <!--  <div class="text-right">-->
+
+  <!--  <nav>-->
+  <!--      <ul>-->
+  <!--        <li class = "nav-item">-->
+  <!--          <a routerLink="/register" routerLinkActive="active" class="nav-link">Register</a>-->
+  <!--        </li>-->
+  <!--        <li class = "nav-item">-->
+  <!--          <a routerLink="/login" routerLinkActive="active" class="nav-link">Login</a>-->
+  <!--        </li>-->
+  <!--      </ul>-->
+  <!--  </nav>-->
+  <router-outlet></router-outlet>
+  <div class="m-5 p-5">&nbsp;</div>
+  <footer class="text-center" style="height: 50px">
+     Vision Library is a complete Ticket solution created &copy; in 2022
+  </footer>
+</div>

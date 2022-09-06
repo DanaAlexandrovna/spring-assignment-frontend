@@ -1,0 +1,38 @@
+@media only screen and (min-width: 767px) {
+  .align-to-bottom {
+    bottom: 0;
+    position: absolute;
+  }
+}
+
+.flight-cut {
+  margin: 0;
+  background-image: url("/assets/flight-cut.jpg");
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-bottom: 12px;
+}
+
+footer {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
+
+
+/*Am adaugat cod pentru pozitionare buna a imaginilor din card*/
+/*imaginile vor avea aproximativ 300x500 pixel, de aceea chiar asa am pus div-ul*/
+
+/*.books-list>.book-item>.image {*/
+/*  display: inline-block;*/
+/*  width: 20$;*/
+/*  height: 500px;*/
+
+/*}*/
+/*.books-list>.book-item>.content {*/
+/*  display: inline-block;*/
+/*  min-width: 300px;*/
+/*  height: 500px;*/
+
+/*}*/
