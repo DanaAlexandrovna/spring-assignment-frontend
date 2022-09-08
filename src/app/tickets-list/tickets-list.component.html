@@ -1,6 +1,16 @@
-<div class="row">
-  <div *ngFor="let ticket of allTickets"
-       class="col-12 col-md-6 p-4">
+<div class="tickets">
+  <h1>Tickets</h1>
+  <div class="container">
+
+    <div *ngFor="let ticket of allTickets">
       <div>Ticket with id={{ticket.id}}</div>
+    </div>
+    {{destination}}
+
+    <div *ngFor="let arrival of arrivals">
+      <div>{{arrival}}</div>
+    </div>
+
   </div>
+
 </div>

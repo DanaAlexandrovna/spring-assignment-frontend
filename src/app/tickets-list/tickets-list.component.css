@@ -1,3 +1,19 @@
+.tickets {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.tickets .container {
+  width: 70vw;
+
+}
+
+
+
+
+
+
 .sidenav {
   height: 100%;
   width: 200px;

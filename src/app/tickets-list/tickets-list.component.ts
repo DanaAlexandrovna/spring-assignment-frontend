@@ -15,7 +15,8 @@ import {Review} from "../common/review";
 export class TicketsListComponent implements OnInit {
 
   allTickets!: Ticket[];
-  // destination: string;
+  destination: string = 'Honolulu';
+  arrivals: string[] = ['Tibet', 'Constanta']
 
   // book!: Ticket; // delete it
   // PAGE_SIZE: number = 4;
@@ -28,7 +29,7 @@ export class TicketsListComponent implements OnInit {
   // searchType: string = "";
 
 
-  constructor(private bookService: TicketService,
+  constructor(private ticketService: TicketService,
               private router: Router,
               public commonUtil: CommonUtil) {
   }
@@ -39,8 +40,9 @@ export class TicketsListComponent implements OnInit {
 
   loadTickets() {
 
-    this.bookService.getTickets().subscribe(
+    this.ticketService.getTickets().subscribe(
       (data: any) => {
+        console.log(data)
         this.allTickets = data.content;
       }
     )
@@ -48,7 +50,7 @@ export class TicketsListComponent implements OnInit {
 
 
   // deleteBook(id: number) {
-  //   this.bookService.deleteBook(id).subscribe(data => {
+  //   this.ticketService.deleteBook(id).subscribe(data => {
   //     console.log(data);
   //     this.getBooks();
   //   })
