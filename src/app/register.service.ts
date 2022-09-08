@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {User} from "./user";
 import {Observable} from "rxjs";
@@ -8,19 +8,23 @@ import {Login} from "./login";
   providedIn: 'root'
 })
 export class RegisterService {
-  baseUrl="http://localhost:8080";
-  constructor(private httpClient: HttpClient) { }
+  baseUrl = "http://localhost:8080/api/v1";
 
-  registerUser(user: User): Observable<any>{
-        console.log(user);
-        const responseOptions : Object = {
-          responseType: "text"
-        }
-        return this.httpClient.post<any>(`${this.baseUrl}registration`, user, responseOptions);
+  constructor(private httpClient: HttpClient) {
   }
 
-  loginUser(login: Login): Observable<any>{
+  registerUser(user: User): Observable<any> {
+    console.log(user);
+    const responseOptions: Object = {
+      responseType: "text"
+    }
+    return this.httpClient.post<any>(`${this.baseUrl}/register`, user, responseOptions);
+  }
+
+  loginUser(login: Login): Observable<any> {
     console.log(login);
-    return this.httpClient.post<any>(`${this.baseUrl}login`, login);
+    return this.httpClient.post<any>(`${this.baseUrl}/login`, login);
   }
+
+
 }

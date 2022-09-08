@@ -8,7 +8,7 @@ import {PageEvent} from '@angular/material/paginator';
 import {Review} from "../common/review";
 
 @Component({
-  selector: 'app-search-ticket',
+  selector: 'app-search-book',
   templateUrl: './tickets-list.component.html',
   styleUrls: ['./tickets-list.component.css', './search-by-category.css']
 })

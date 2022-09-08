@@ -24,6 +24,10 @@ export class LoginUserComponent implements OnInit {
   loginRegister(){
     console.log(this.login);
     this.registerService.loginUser(this.login).subscribe(data=>{
+      if (!data) {
+        alert(`Login for ${this.login} did not succeed`)
+        return;
+      }
       console.log(data);
       this.commonUtil.setLoginUser(data);
       this.router.navigate(["/tickets"]);

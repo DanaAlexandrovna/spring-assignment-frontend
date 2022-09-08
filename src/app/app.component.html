@@ -10,8 +10,8 @@
 
       <!--      Am grupat optiunile de navigare care apar in momentul logarii:-->
       <div *ngIf="commonUtil.getLoginUser()" class="d-flex gap-2">
-        <a routerLink="/tickets" routerLinkActive="active" class="btn btn-close-white">All Tickets</a>
-        <a routerLink="/addTicket" routerLinkActive="active" class="btn btn-close-white">Add Ticket in System</a>
+        <a routerLink="/tickets" routerLinkActive="active" class="btn btn-close-white">All Books</a>
+        <a routerLink="/addBook" routerLinkActive="active" class="btn btn-close-white">Add Book in System</a>
         <a routerLink="/home" routerLinkActive="active" class="btn btn-close-white">Home</a>
       </div>
 
@@ -46,6 +46,6 @@
   <router-outlet></router-outlet>
   <div class="m-5 p-5">&nbsp;</div>
   <footer class="text-center" style="height: 50px">
-     Vision Library is a complete Ticket solution created &copy; in 2022
+     Vision Library is a complete eBook solution created &copy; in 2022
   </footer>
 </div>

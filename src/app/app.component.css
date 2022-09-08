@@ -5,9 +5,9 @@
   }
 }
 
-.flight-cut {
+.bg-100px {
   margin: 0;
-  background-image: url("/assets/flight-cut.jpg");
+  background-image: url("/assets/bg-home-100px.jpg");
   background-position: bottom;
   background-repeat: no-repeat;
   background-size: cover;
