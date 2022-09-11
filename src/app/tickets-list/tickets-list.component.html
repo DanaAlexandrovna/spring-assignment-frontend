@@ -1,15 +1,88 @@
-<div class="tickets">
-  <h1>Tickets</h1>
-  <div class="container">
+<link rel="stylesheet" href="tickets-list.component.css">
+<div class="row admin-addresses-container">
+  <!--  <div class="user-tickets">-->
+  <!--  <div class="addresses">-->
 
-    <div *ngFor="let ticket of allTickets">
-      <div>Ticket with id={{ticket.id}}</div>
-    </div>
-    {{destination}}
+  <!--&lt;!&ndash;    <div class="user-ticket"&ndash;&gt;-->
+  <!--&lt;!&ndash;         *ngFor="let ticket of allTickets"&ndash;&gt;-->
+  <!--&lt;!&ndash;    >&ndash;&gt;-->
+  <!--&lt;!&ndash;      <h2>TICKET</h2>&ndash;&gt;-->
 
-    <div *ngFor="let arrival of arrivals">
-      <div>{{arrival}}</div>
-    </div>
+
+  <!--&lt;!&ndash;      <div>{{ticket.departure}}</div>&ndash;&gt;-->
+
+  <!--&lt;!&ndash;      <div>&ndash;&gt;-->
+
+  <!--&lt;!&ndash;          <span>&ndash;&gt;-->
+  <!--&lt;!&ndash;        {{ticket.from}}</span>&ndash;&gt;-->
+  <!--&lt;!&ndash;        -&ndash;&gt;&ndash;&gt;-->
+  <!--&lt;!&ndash;        <span>&ndash;&gt;-->
+  <!--&lt;!&ndash;        {{ticket.to}}</span>&ndash;&gt;-->
+  <!--&lt;!&ndash;      </div>&ndash;&gt;-->
+
+  <!--&lt;!&ndash;      <div>&ndash;&gt;-->
+  <!--&lt;!&ndash;        Be present at the {{ticket.address}} at preferably 2 hourse before {{ticket.departure}}&ndash;&gt;-->
+  <!--&lt;!&ndash;      </div>&ndash;&gt;-->
+
+  <!--&lt;!&ndash;    </div>&ndash;&gt;-->
+
+  <!--        <div class="address"-->
+  <!--             *ngFor="let address of allAddresses"-->
+  <!--        >-->
+  <!--          <div>Id: {{address.id}}</div>-->
+  <!--          <div>Country: {{address.country}}</div>-->
+  <!--          <div>Address: {{address.address}}</div>-->
+  <!--          <div>Airport: {{address.airport}}</div>-->
+  <!--          <div>-->
+  <!--            <a href="/admin/addresses/{{address.id}}"></a><button class="btn btn-primary">Edit</button>-->
+  <!--            <a href="/admin/addresses/{{address.id}}"></a><button class="btn btn-secondary">Delete</button>-->
+  <!--          </div>-->
+
+  <!--        </div>-->
+
+  <!--  </div>-->
+
+  <div class="edit-address container col col-8 offset-2">
+    <!--    <form action="false">-->
+    <!--      <div class="form-group">-->
+    <!--        <label for="exampleInputEmail1">Email address</label>-->
+    <!--        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">-->
+    <!--        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+    <!--      </div>-->
+
+    <!--    </form>-->
+
+    <form class="edit-ticket-form">
+
+      <!--      Country:-->
+      <div class="form-group">
+        <label for="exampleInputEmail1">Airport Country</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+               placeholder="Enter Country">
+<!--        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+      </div>
+
+      <!--      Address :-->
+      <div class="form-group">
+        <label for="exampleInputEmail1">Airport Address</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+               placeholder="Enter Address">
+<!--        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+      </div>
+
+      <!--      Airport :-->
+      <label for="exampleInputEmail1">Choose Airport</label>
+      <select class="form-select" aria-label="Default select example">
+<!--        // TODO for airport in all airports:-->
+        <option value="1">BGY</option>
+        <option value="2">MIL</option>
+        <option value="3">WAW</option>
+      </select>
+
+
+      <button type="submit" class="btn btn-primary">Save Address</button>
+    </form>
+
 
   </div>
 
