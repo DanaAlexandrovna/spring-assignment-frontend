@@ -7,19 +7,34 @@
 
 .bg-100px {
   margin: 0;
-  background-image: url("/assets/bg-home-100px.jpg");
+  background-image: url("/assets/flight-cut.jpg");
   background-position: bottom;
   background-repeat: no-repeat;
   background-size: cover;
   margin-bottom: 12px;
 }
 
+.page-container { background: whitesmoke;}
+
 footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: white;
   position: absolute;
   width: 100%;
   bottom: 0;
 }
 
+.login-logout-container {
+  position: fixed;
+  right: 0;
+  z-index: 100;
+
+  display: flex;
+  justify-content: flex-end;
+}
 
 /*Am adaugat cod pentru pozitionare buna a imaginilor din card*/
 /*imaginile vor avea aproximativ 300x500 pixel, de aceea chiar asa am pus div-ul*/

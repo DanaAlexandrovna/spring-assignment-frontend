@@ -40,48 +40,48 @@ export class TicketsListComponent implements OnInit {
     this.loadTickets();
 
     // TODO tmp:
-    // this.allTickets = [
-    //   {
-    //     id: 1,
-    //     // user_id: 1,
-    //     departure: 'Oct 23rd 12:30 AM',
-    //     from: 'Bergamo',
-    //     to: 'Warsaw',
-    //     address: 'BGY International Airport'
-    //   },
-    //   {
-    //     id: 2,
-    //     // user_id: 1,
-    //     departure: 'Oct 27rd 8:31 AM',
-    //     from: 'Warsaw',
-    //     to: 'Bergamo',
-    //     address: ''
-    //   },
-    //   {
-    //     id: 3,
-    //     // user_id: 2,
-    //     departure: 'Nov 1st 12:30 AM',
-    //     from: 'Vienna',
-    //     to: 'Warsaw',
-    //     address: ''
-    //   },
-    //   {
-    //     id: 4,
-    //     // user_id: 2,
-    //     departure: 'Nov 2nd 2:30 AM',
-    //     from: 'Warsaw',
-    //     to: 'Helsinki',
-    //     address: ''
-    //   },
-    //   {
-    //     id: 5,
-    //     // user_id: 3,
-    //     departure: 'Nov 3rd 12:00 PM',
-    //     from: 'Milano',
-    //     to: 'Vienna',
-    //     address: ''
-    //   },
-    // ]// TODO tmp:
+    this.allTickets = [
+      {
+        id: 1,
+        // user_id: 1,
+        departure: 'Oct 23rd 12:30 AM',
+        from: 'Bergamo',
+        to: 'Warsaw',
+        address: 'BGY International Airport'
+      },
+      {
+        id: 2,
+        // user_id: 1,
+        departure: 'Oct 27rd 8:31 AM',
+        from: 'Warsaw',
+        to: 'Bergamo',
+        address: ''
+      },
+      {
+        id: 3,
+        // user_id: 2,
+        departure: 'Nov 1st 12:30 AM',
+        from: 'Vienna',
+        to: 'Warsaw',
+        address: ''
+      },
+      {
+        id: 4,
+        // user_id: 2,
+        departure: 'Nov 2nd 2:30 AM',
+        from: 'Warsaw',
+        to: 'Helsinki',
+        address: ''
+      },
+      {
+        id: 5,
+        // user_id: 3,
+        departure: 'Nov 3rd 12:00 PM',
+        from: 'Milano',
+        to: 'Vienna',
+        address: ''
+      },
+    ]
 
     this.allAddresses = [
       {
