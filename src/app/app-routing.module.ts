@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {LoginUserComponent} from "./login-book/login-user.component";
+import {LoginUserComponent} from "./login/login-user.component";
 import {RegisterUserComponent} from "./register-user/register-user.component";
 import {TicketsListComponent} from "./tickets-list/tickets-list.component";
 import { ModalModule } from 'ngx-bootstrap/modal'

@@ -7,7 +7,8 @@ import { RegisterUserComponent } from './register-user/register-user.component';
 import { FormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
 import {TicketService} from "./services/ticket.service";
-import { LoginUserComponent } from './login-book/login-user.component';
+// @ts-ignore
+import { LoginUserComponent } from './login/login-user.component';
 import {TicketsListComponent} from "./tickets-list/tickets-list.component";
 import { HomePageComponent } from './home-page/home-page.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';

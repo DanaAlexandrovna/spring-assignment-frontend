@@ -6,7 +6,7 @@ import {CommonUtil} from "../services/commonUtil";
 import {Router} from "@angular/router";
 
 @Component({
-  selector: 'app-login-book',
+  selector: 'app-login',
   templateUrl: './login-user.component.html',
   styleUrls: ['./login-user.component.css']
 })
