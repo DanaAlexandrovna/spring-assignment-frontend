@@ -2,24 +2,34 @@
 
 
 <div class="page-container position-relative" style="min-height: calc(100vh + 100px)">
-  <div [ngClass]="!commonUtil.getLoginUser() ? 'row p-3 bg-black' : 'row p-3 bg-100px'"> <!-- Am adaugat padding la navigatie -->
-<!--  <div class="row p-3"   > &lt;!&ndash; Am adaugat padding la navigatie &ndash;&gt;-->
-    <div class="col-sm-8"  style="position: relative; z-index: 3">
+  <div [ngClass]="!commonUtil.getLoginUser() ? 'row p-3 bg-black' : 'row p-3 bg-100px'">
+    <!-- Am adaugat padding la navigatie -->
+    <!--  <div class="row p-3"   > &lt;!&ndash; Am adaugat padding la navigatie &ndash;&gt;-->
+    <div class="col-sm-8" style="position: relative; z-index: 3">
       <a *ngIf="!commonUtil.getLoginUser()" routerLink="/home" routerLinkActive="active"
          class="btn btn-outline-light">Home</a>
 
       <!--      Am grupat optiunile de navigare care apar in momentul logarii:-->
       <div *ngIf="commonUtil.getLoginUser()" class="d-flex gap-2">
-<!--        TODO for user:-->
+        <!--        TODO for user:-->
         <a routerLink="/tickets" routerLinkActive="active" class="btn btn-close-white">Your Tickets</a>
         <a routerLink="/addTicket" routerLinkActive="active" class="btn btn-close-white">Book a ticket</a>
         <a routerLink="/home" routerLinkActive="" class="btn btn-close-white">Home</a>
-<!--        TODO ADMIN:-->
-<!--        <a routerLink="/tickets" routerLinkActive="" class="btn btn-close-white">Users</a>-->
-<!--        <a routerLink="/addresses" routerLinkActive="active" class="btn btn-close-white">Addresses</a>-->
+        <!--        TODO ADMIN:-->
+        <!--        <a routerLink="/tickets" routerLinkActive="" class="btn btn-close-white">Users</a>-->
+        <!--        <a routerLink="/addresses" routerLinkActive="active" class="btn btn-close-white">Addresses</a>-->
 
       </div>
 
+      <!--      ADMIN NAV:-->
+
+      <div *ngIf="commonUtil.isAdminUser()" class="d-flex gap-2">
+        <!--        TODO for user:-->
+        <p>Manage:</p>
+        <a routerLink="/admin/users" routerLinkActive="" class="btn btn-close-white">Users</a>
+        <a routerLink="/admin/addresses" routerLinkActive="" class="btn btn-close-white">Addresses</a>
+
+      </div>
 
     </div>
 

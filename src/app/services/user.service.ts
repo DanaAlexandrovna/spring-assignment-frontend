@@ -4,22 +4,20 @@ import {Observable } from "rxjs";
 import { Ticket } from "../common/ticket";
 import { map } from "rxjs/operators";
 import {Review} from "../common/review";
-import {User} from "../user";
-
 @Injectable({
   providedIn: 'root'
 })
 export class TicketService {
 
-  private baseUrl="http://localhost:8080/users";
+  private baseUrl="http://localhost:8080/tickets";
 
   constructor(private httpClient: HttpClient) { }
 
   public getTickets(): Observable<any> {
-    return this.httpClient.get<User[]>(`${this.baseUrl}`);
+    return this.httpClient.get<Ticket[]>(`${this.baseUrl}`);
   }
   public getTicket(id: number): Observable<any> {
-    return this.httpClient.get<User>(`${this.baseUrl}/${id}`);
+    return this.httpClient.get<Ticket>(`${this.baseUrl}/${id}`);
   }
 
   // TODO CRUD for the other operations

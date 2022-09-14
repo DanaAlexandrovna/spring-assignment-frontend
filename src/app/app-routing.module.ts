@@ -13,9 +13,19 @@ import {HomePageComponent} from "./home-page/home-page.component";
 // import {PaginationComponent} from "./pagination/pagination.component";
 // import {SearchByLanguageComponent} from "./search-by-language/search-by-language.component";
 
+import {AdminUsers} from './admin/users/admin-users.component'
+import {AdminAddresses} from './admin/addresses/admin-addresses.component'
+// // TODO airports, aircrafts etc   but you must be aware that airports should reference a address (foreign key) so you must use a html select
+// import {AdminAirports} from './admin/users/users.component'
+// import {AdminAddresses} from './admin/users/users.component'
+// // TODO and after you create the components, you must add them to the routes
 
 
 const routes: Routes = [
+  {path: 'admin/users', component: AdminUsers},
+  {path: 'admin/addresses', component: AdminAddresses},
+  {path: 'login', component: LoginUserComponent},
+  {path: 'login', component: LoginUserComponent},
   {path: 'login', component: LoginUserComponent},
   {path: 'register', component: RegisterUserComponent},
   {path: 'tickets', component: TicketsListComponent},
