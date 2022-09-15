@@ -3,6 +3,7 @@ import {TicketService} from "../../services/ticket.service";
 import {Router} from '@angular/router';
 import {CommonUtil} from "../../services/commonUtil";
 import {User} from "../../user";
+import {UserService} from "../../services/user.service";
 
 @Component({
   selector: 'admin-users',
@@ -16,23 +17,23 @@ export class AdminUsers implements OnInit {
   users!: User[];
 
 
-  constructor(private userService: TicketService,
+  constructor(private userService: UserService,
               private router: Router,
               public commonUtil: CommonUtil) {
   }
 
   ngOnInit(): void {
-    this.loadTickets();
+    this.loadAll();
 
   }
 
-  loadTickets() {
+  loadAll() {
 
-    this.bookService.getTickets().subscribe(
+    this.userService.get().subscribe(
       (data: any) => {
-        console.log(data.content) // TODO no data found?
-        if (data.content) {
-          this.users = data.content;
+        console.log('fetched all users:', data) // TODO no data found?
+        if (data) {
+          this.users = data;
         }
       }
     )
@@ -41,20 +42,28 @@ export class AdminUsers implements OnInit {
   }
 
 
-  // deleteBook(id: number) {
-  //   this.bookService.deleteBook(id).subscribe(data => {
-  //     console.log(data);
-  //     this.getBooks();
-  //   })
-  // }
+  delete(id: number) {
+    let doDelete = confirm('PERMANENTLY delete the user?')
+    console.log('doDelete', doDelete)
+    if (doDelete) {
+      this.userService.delete(id).subscribe(data => {
+        console.log(data);
+        this.users = this.users.filter(
+          user => user.id === id
+        )
+      })
+    }
+  }
+
+
+  update(id: number) {
+    this.router.navigate(['admin/users/update', id]);
+  }
+
+  // details(id: number) {
   //
-  //
-  // updateBook(id: number) {
-  //   this.router.navigate(['updateBook', id]);
-  // }
-  //
-  // bookDetails(id: number) {
   //   this.router.navigate(['viewBookDetails', id]);
+  //
   // }
 
 }

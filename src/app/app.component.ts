@@ -19,10 +19,6 @@ export class AppComponent implements OnDestroy{
     this.router.navigate(["/home"]);
   }
 
-  isAdmin(): boolean {
-    return true; // TODO change
-  }
-
   ngOnDestroy() {
     //this.commonUtil.logout();
     //this.commonUtil.setLoginUser(null);

@@ -1,89 +1,49 @@
 <link rel="stylesheet" href="admin-users.component.css">
-<div class="row admin-addresses-container">
-  <div class="user-tickets">
-
-    <div class="user-ticket"
-         *ngFor="let ticket of allTickets"
+<div class="row admin-users-container">
+  <table class="admin-users">
+    <thead>
+    <th>id</th>
+    <th>Update/Delete</th>
+    <th>firstName</th>
+    <th>lastName</th>
+    <th>email</th>
+    <th>password</th>
+    <th>roleType</th>
+    <th>locked</th>
+    <th>enabled</th>
+    <th>username</th>
+    <th>accountNonExpired</th>
+    <th>credentialsNonExpired</th>
+    <th>accountNonLocked</th>
+    </thead>
+    <tr class="user-item"
+        *ngFor="let user of users"
     >
-      <h2>TICKET</h2>
 
 
-      <div>{{ticket.departure}}</div>
+      <td>{{user.id}}</td>
+      <td style="display: flex; flex-direction: column; gap: 5px;">
+        <button class="btn btn-primary" (click)="update(user.id)">
+          Update
+        </button>
+        <button class="btn btn-danger" (click)="delete(user.id)">
+          Delete
+        </button>
+      </td>
+      <td>{{user.firstName}}</td>
+      <td>{{user.lastName}}</td>
+      <td>{{user.email}}</td>
+      <td>{{user.password}}</td>
+      <td>{{user.roleType}}</td>
+      <td>{{user.locked}}</td>
+      <td>{{user.enabled}}</td>
+      <td>{{user.username}}</td>
+      <td>{{user.accountNonExpired}}</td>
+      <td>{{user.credentialsNonExpired}}</td>
+      <td>{{user.accountNonLocked}}</td>
 
-      <div>
-
-            <span>
-          {{ticket.from}}</span>
-        --->
-        <span>
-          {{ticket.to}}</span>
-      </div>
-
-      <div>
-        Be present at the {{ticket.address}} at preferably 2 hourse before {{ticket.departure}}
-      </div>
-
-    </div>
-  </div>
-  <!--  <div class="addresses">-->
-  <!--    <div class="address"-->
-  <!--         *ngFor="let address of allAddresses"-->
-  <!--    >-->
-  <!--      <div>Id: {{address.id}}</div>-->
-  <!--      <div>Country: {{address.country}}</div>-->
-  <!--      <div>Address: {{address.address}}</div>-->
-  <!--      <div>Airport: {{address.airport}}</div>-->
-  <!--      <div>-->
-  <!--        <a href="/admin/addresses/{{address.id}}"></a>-->
-  <!--        <button class="btn btn-primary">Edit</button>-->
-  <!--        <a href="/admin/addresses/{{address.id}}"></a>-->
-  <!--        <button class="btn btn-secondary">Delete</button>-->
-  <!--      </div>-->
-
-  <!--    </div>-->
-
-  <!--  </div>-->
-
-  <!--  &lt;!&ndash;  <div class="edit-address container col col-8 offset-2">&ndash;&gt;-->
-  <!--  &lt;!&ndash;    &lt;!&ndash;    <form action="false">&ndash;&gt;&ndash;&gt;-->
-  <!--  &lt;!&ndash;    &lt;!&ndash;      <div class="form-group">&ndash;&gt;&ndash;&gt;-->
-  <!--  &lt;!&ndash;    &lt;!&ndash;        <label for="exampleInputEmail1">Email address</label>&ndash;&gt;&ndash;&gt;-->
-  <!--  &lt;!&ndash;    &lt;!&ndash;        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">&ndash;&gt;&ndash;&gt;-->
-  <!--  &lt;!&ndash;    &lt;!&ndash;        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>&ndash;&gt;&ndash;&gt;-->
-  <!--  &lt;!&ndash;    &lt;!&ndash;      </div>&ndash;&gt;&ndash;&gt;-->
-
-  <!--  &lt;!&ndash;    &lt;!&ndash;    </form>&ndash;&gt;&ndash;&gt;-->
-
-  <!--  &lt;!&ndash;    <form class="edit-ticket-form">&ndash;&gt;-->
-
-  <!--  &lt;!&ndash;      &lt;!&ndash;      Country:&ndash;&gt;&ndash;&gt;-->
-  <!--  &lt;!&ndash;      <div class="form-group">&ndash;&gt;-->
-  <!--  &lt;!&ndash;        <label for="exampleInputEmail1">Airport Country</label>&ndash;&gt;-->
-  <!--  &lt;!&ndash;        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"&ndash;&gt;-->
-  <!--  &lt;!&ndash;               placeholder="Enter Country">&ndash;&gt;-->
-  <!--  &lt;!&ndash;&lt;!&ndash;        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>&ndash;&gt;&ndash;&gt;-->
-  <!--  &lt;!&ndash;      </div>&ndash;&gt;-->
-
-  <!--  &lt;!&ndash;      &lt;!&ndash;      Address :&ndash;&gt;&ndash;&gt;-->
-  <!--  &lt;!&ndash;      <div class="form-group">&ndash;&gt;-->
-  <!--  &lt;!&ndash;        <label for="exampleInputEmail1">Airport Address</label>&ndash;&gt;-->
-  <!--  &lt;!&ndash;        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"&ndash;&gt;-->
-  <!--  &lt;!&ndash;               placeholder="Enter Address">&ndash;&gt;-->
-  <!--  &lt;!&ndash;&lt;!&ndash;        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>&ndash;&gt;&ndash;&gt;-->
-  <!--  &lt;!&ndash;      </div>&ndash;&gt;-->
-
-  <!--  &lt;!&ndash;      &lt;!&ndash;      Airport :&ndash;&gt;&ndash;&gt;-->
-  <!--  &lt;!&ndash;      <label for="exampleInputEmail1">Choose Airport</label>&ndash;&gt;-->
-  <!--  &lt;!&ndash;      <select class="form-select" aria-label="Default select example">&ndash;&gt;-->
-  <!--  &lt;!&ndash;&lt;!&ndash;        // TODO for airport in all airports:&ndash;&gt;&ndash;&gt;-->
-  <!--  &lt;!&ndash;        <option value="1">BGY</option>&ndash;&gt;-->
-  <!--  &lt;!&ndash;        <option value="2">MIL</option>&ndash;&gt;-->
-  <!--  &lt;!&ndash;        <option value="3">WAW</option>&ndash;&gt;-->
-  <!--  &lt;!&ndash;      </select>&ndash;&gt;-->
-
-
-  <!--  &lt;!&ndash;      <button type="submit" class="btn btn-primary">Save Address</button>&ndash;&gt;-->
-  <!--  &lt;!&ndash;    </form>&ndash;&gt;-->
+    </tr>
+  </table>
 
 
 </div>

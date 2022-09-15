@@ -14,6 +14,20 @@ export class User {
   credentialsNonExpired: boolean;
   accountNonLocked: boolean;
 }
+export class UserUpdate {
+  id: 3;
+  firstName: string;
+  lastName: string;
+  email: string;
+  password: string;
+  roleType: string;
+  locked: boolean;
+  enabled: boolean;
+  username: string;
+  accountNonExpired: boolean;
+  credentialsNonExpired: boolean;
+  accountNonLocked: boolean;
+}
 
 export class UserAuthority {
 

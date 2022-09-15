@@ -16,6 +16,22 @@
 
 .page-container { background: whitesmoke;}
 
+.admin-links {
+  margin-top: 6px;
+}
+.manage-links-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0px 12px;
+
+  font-family: "Lucida Handwriting", cursive;
+  color: white;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
 footer {
   display: flex;
   justify-content: center;

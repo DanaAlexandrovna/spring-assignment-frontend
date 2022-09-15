@@ -23,9 +23,9 @@
 
       <!--      ADMIN NAV:-->
 
-      <div *ngIf="commonUtil.isAdminUser()" class="d-flex gap-2">
+      <div *ngIf="commonUtil.isAdminUser()" class="d-flex gap-2 admin-links">
         <!--        TODO for user:-->
-        <p>Manage:</p>
+        <p class="manage-links-header">Admin :</p>
         <a routerLink="/admin/users" routerLinkActive="" class="btn btn-close-white">Users</a>
         <a routerLink="/admin/addresses" routerLinkActive="" class="btn btn-close-white">Addresses</a>
 

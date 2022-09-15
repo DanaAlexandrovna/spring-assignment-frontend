@@ -15,6 +15,8 @@ import {HomePageComponent} from "./home-page/home-page.component";
 
 import {AdminUsers} from './admin/users/admin-users.component'
 import {AdminAddresses} from './admin/addresses/admin-addresses.component'
+import {BrowserModule} from "@angular/platform-browser";
+import {AdminUsersUpdate} from "./admin/users/update/admin-users-update.component";
 // // TODO airports, aircrafts etc   but you must be aware that airports should reference a address (foreign key) so you must use a html select
 // import {AdminAirports} from './admin/users/users.component'
 // import {AdminAddresses} from './admin/users/users.component'
@@ -23,9 +25,8 @@ import {AdminAddresses} from './admin/addresses/admin-addresses.component'
 
 const routes: Routes = [
   {path: 'admin/users', component: AdminUsers},
+  {path: 'admin/users/update/:id', component: AdminUsersUpdate},
   {path: 'admin/addresses', component: AdminAddresses},
-  {path: 'login', component: LoginUserComponent},
-  {path: 'login', component: LoginUserComponent},
   {path: 'login', component: LoginUserComponent},
   {path: 'register', component: RegisterUserComponent},
   {path: 'tickets', component: TicketsListComponent},
@@ -34,7 +35,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes), BrowserModule],
   exports: [RouterModule],
 
 })

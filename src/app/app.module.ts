@@ -13,6 +13,10 @@ import {TicketsListComponent} from "./tickets-list/tickets-list.component";
 import { HomePageComponent } from './home-page/home-page.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import {AdminUsers} from "./admin/users/admin-users.component";
+import {AdminAddresses} from "./admin/addresses/admin-addresses.component";
+import {AdminUsersUpdate} from "./admin/users/update/admin-users-update.component";
+// TODO always add the components you use to declarations:
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,6 +24,9 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     TicketsListComponent,
     LoginUserComponent,
     HomePageComponent,
+    AdminUsers,
+    AdminUsersUpdate,
+    AdminAddresses,
 
   ],
   imports: [

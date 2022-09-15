@@ -1,0 +1,80 @@
+<link rel="stylesheet" href="admin-users-update.component.css">
+<div class="row admin-users-update-container">
+  <form *ngIf="user" class="admin-users">
+    <p>id: {{user.id}}</p>
+
+
+    <div>
+      <label>firstName</label>
+      <input type="text" name="firstName" [(ngModel)]="user.firstName">
+    </div>
+
+    <div>
+      <label>lastName</label>
+      <input type="text" name="lastName" [(ngModel)]="user.lastName">
+    </div>
+
+
+    <div>
+      <label>username</label>
+      <input type="text" name="username" [(ngModel)]="user.username">
+    </div>
+
+    <div>
+      <label>email</label>
+      <input type="email" name="email" [(ngModel)]="user.email">
+    </div>
+
+    <div>
+      <label>password</label>
+      <input type="password" name="password" [(ngModel)]="user.password">
+    </div>
+
+    <!--      roles is also a select   USER/ADMIN-->
+    <div>
+      <label for="roleType">Role:</label>
+      <select name="roleType" id="roleType" [(ngModel)]="user.roleType">
+        <option [value]="'USER'">User</option>
+        <option [value]="'ADMIN'">Admin</option>
+      </select>
+    </div>
+
+    <!--      true/false  -->
+
+    <div>
+      <label for="locked">locked:</label>
+      <select name="locked" id="locked" [(ngModel)]="user.locked">
+        <option [value]="true">true</option>
+        <option [value]="false">false</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="accountNonExpired">accountNonExpired:</label>
+      <select name="accountNonExpired" id="accountNonExpired" [(ngModel)]="user.accountNonExpired">
+        <option [value]="true">true</option>
+        <option [value]="false">false</option>
+      </select>
+    </div>
+    <div>
+      <label for="credentialsNonExpired">credentialsNonExpired:</label>
+      <select name="credentialsNonExpired" id="credentialsNonExpired" [(ngModel)]="user.credentialsNonExpired">
+        <option [value]="true">true</option>
+        <option [value]="false">false</option>
+      </select>
+    </div>
+    <div>
+      <label for="accountNonLocked">accountNonLocked:</label>
+      <select name="accountNonLocked" id="accountNonLocked" [(ngModel)]="user.accountNonLocked">
+        <option [value]="true">true</option>
+        <option [value]="false">false</option>
+      </select>
+    </div>
+
+    <button class="btn btn-primary" type="button" (click)="update()">Update</button>
+
+  </form>
+
+
+</div>
+
