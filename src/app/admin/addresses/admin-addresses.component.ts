@@ -1,11 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {Address, Ticket} from "../../common/ticket";
-import {TicketService} from "../../services/ticket.service";
 import {Router} from '@angular/router';
-import {HttpErrorResponse} from "@angular/common/http";
 import {CommonUtil} from "../../services/commonUtil";
-import {PageEvent} from '@angular/material/paginator';
-import {Review} from "../../common/review";
+import {AddressService} from "../../services/address.service";
 
 @Component({
   selector: 'admin-addresses',
@@ -18,25 +15,16 @@ export class AdminAddresses implements OnInit {
   // destination: string;
 
   // TODO for admin/addresses
-  allAddresses!: Address[];
-
-  // book!: Ticket; // delete it
-  // PAGE_SIZE: number = 4;
-  // totalData: number = 0;
-  // currentPage: number = 0;
-  // languages: any[] = new Ticket().language;
-  // categories: any[] = new Ticket().category;
-  // selectedLanguage: string = "";
-  // selectedCategory: string = "";
-  // searchType: string = "";
+  addresses!: Address[];
 
 
-  constructor(private bookService: TicketService,
+  constructor(private addressService: AddressService,
               private router: Router,
               public commonUtil: CommonUtil) {
   }
 
   ngOnInit(): void {
+    // ???
     this.loadTickets();
 
     // TODO tmp:
@@ -83,7 +71,7 @@ export class AdminAddresses implements OnInit {
       },
     ]
 
-    this.allAddresses = [
+    this.addresses = [
       {
         id: 1,
         // user_id: 1,
@@ -108,13 +96,14 @@ export class AdminAddresses implements OnInit {
     ]
   }
 
+  // ?? or load Addresses
   loadTickets() {
 
-    this.bookService.getTickets().subscribe(
+    this.addressService.get().subscribe(
       (data: any) => {
-        console.log(data.content) // TODO no data found?
+        console.log('fetched all addresses:') // TODO no data found?
         if (data.content) {
-          this.allTickets = data.content;
+          this.addresses = data.content;
         }
       }
     )
@@ -123,20 +112,20 @@ export class AdminAddresses implements OnInit {
   }
 
 
-  // deleteBook(id: number) {
-  //   this.bookService.deleteBook(id).subscribe(data => {
-  //     console.log(data);
-  //     this.getBooks();
-  //   })
-  // }
-  //
-  //
-  // updateBook(id: number) {
-  //   this.router.navigate(['updateBook', id]);
-  // }
-  //
-  // bookDetails(id: number) {
-  //   this.router.navigate(['viewBookDetails', id]);
-  // }
+  delete(id: number) {
+    let doDelete = confirm('PERMANENTLY delete the address?')
+    console.log('doDelete', doDelete)
+    if (doDelete) {
+      this.addressService.delete(id).subscribe(data => {
+        console.log(data);
+        this.addresses = this.addresses.filter(
+          addresses => addresses.id === id
+        )
+      })
+    }
+  }
 
+  update(id: number) {
+    this.router.navigate(['admin/addresses/update', id]);
+  }
 }

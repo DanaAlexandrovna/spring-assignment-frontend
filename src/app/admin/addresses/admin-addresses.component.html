@@ -1,7 +1,29 @@
 <link rel="stylesheet" href="admin-addresses.component.css">
 <div class="row admin-addresses-container">
+  <table class="admin-addresses">
+    <thead>
+    <th>id</th>
+    <th>Update/Delete</th>
+    <th>country</th>
+    <th>address</th>
+    </thead>
+    <tr class="user-item"
+        *ngFor="let address of addresses"
+    >
+      <td>{{address.id}}</td>
+      <td style="display: flex; flex-direction: column; gap: 5px;">
+        <button class="btn btn-primary" (click)="update(address.id)">
+          Update
+        </button>
+        <button class="btn btn-danger" (click)="delete(address.id)">
+          Delete
+        </button>
 
-
+      </td>
+      <td>{{address.country}}</td>
+      <td>{{address.address}}</td>
+    </tr>
+  </table>
 
 </div>
 

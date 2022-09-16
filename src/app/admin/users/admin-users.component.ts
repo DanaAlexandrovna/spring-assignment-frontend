@@ -37,8 +37,6 @@ export class AdminUsers implements OnInit {
         }
       }
     )
-
-
   }
 
 
@@ -54,7 +52,6 @@ export class AdminUsers implements OnInit {
       })
     }
   }
-
 
   update(id: number) {
     this.router.navigate(['admin/users/update', id]);

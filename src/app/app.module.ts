@@ -16,6 +16,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import {AdminUsers} from "./admin/users/admin-users.component";
 import {AdminAddresses} from "./admin/addresses/admin-addresses.component";
 import {AdminUsersUpdate} from "./admin/users/update/admin-users-update.component";
+import {AdminAddressesUpdate} from "./admin/addresses/update/admin-addresses-update.component";
 // TODO always add the components you use to declarations:
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import {AdminUsersUpdate} from "./admin/users/update/admin-users-update.componen
     AdminUsers,
     AdminUsersUpdate,
     AdminAddresses,
+    AdminAddressesUpdate,
 
   ],
   imports: [

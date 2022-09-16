@@ -1,14 +1,14 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
-import {User, UserUpdate} from "../user";
+import {Address, AddressUpdate} from "../address";
 
 @Injectable({
   providedIn: 'root'
 })
-export class UserService {
+export class AddressService {
 
-  private baseUrl = "http://localhost:8080/users";
+  private baseUrl = "http://localhost:8080/addresses";
 
   constructor(private httpClient: HttpClient) {
   }
@@ -18,19 +18,19 @@ export class UserService {
     //   .then(res => res.json())
     //   .then(json => console.log(json as User[]))
     //   .catch(err => console.error(err));
-    return this.httpClient.get<User[]>(`${this.baseUrl}`);
+    return this.httpClient.get<Address[]>(`${this.baseUrl}`);
   }
 
   public getById(id: number): Observable<any> {
-    return this.httpClient.get<User>(`${this.baseUrl}/${id}`);
+    return this.httpClient.get<Address>(`${this.baseUrl}/${id}`);
   }
 
-  public add(user: User): Observable<Object> {
-    return this.httpClient.post(`${this.baseUrl}/add`, user);
+  public add(address: Address): Observable<Object> {
+    return this.httpClient.post(`${this.baseUrl}/add`, address);
   }
 
-  public update(id: number, user: UserUpdate): Observable<Object> {
-    return this.httpClient.put(`${this.baseUrl}/update`, user);
+  public update(id: number, address: AddressUpdate): Observable<Object> {
+    return this.httpClient.put(`${this.baseUrl}/update`, address);
   }
 
   public delete(id: number) {

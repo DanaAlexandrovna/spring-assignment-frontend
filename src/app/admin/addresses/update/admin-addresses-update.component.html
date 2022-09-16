@@ -1,0 +1,23 @@
+<link rel="stylesheet" href="admin-addresses-update.component.css">
+<div class="row admin-addresses-container">
+  <form *ngIf="address" class="admin-addresses">
+    <p>id: {{address.id}}</p>
+
+
+    <div>
+      <label>country</label>
+      <input type="text" name="country" [(ngModel)]="address.country">
+    </div>
+
+    <div>
+      <label>address</label>
+      <input type="text" name="address" [(ngModel)]="address.address">
+    </div>
+
+    <button class="btn btn-primary" type="button" (click)="update()">Update</button>
+
+  </form>
+
+
+</div>
+
