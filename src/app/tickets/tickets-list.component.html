@@ -3,7 +3,7 @@
   <div class="user-tickets">
 
     <div class="user-ticket"
-         *ngFor="let ticket of allTickets"
+         *ngFor="let ticket of tickets"
     >
       <h2>TICKET</h2>
 
@@ -20,9 +20,13 @@
       </div>
 
       <div>
-        Be present at the {{ticket.address}} at preferably 2 hourse before {{ticket.departure}}
+        Be present at the airport <b>({{ticket.address}})</b> at preferably 2 hourse before {{ticket.departure}}
       </div>
 
+      <p>
+        <button class="btn btn-danger" (click)="delete(ticket.id)">Delete</button>
+<!--        <button class="btn btn-primary mx-1">Update</button>-->
+      </p>
     </div>
   </div>
   <!--  <div class="addresses">-->

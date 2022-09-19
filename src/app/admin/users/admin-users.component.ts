@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {TicketService} from "../../services/ticket.service";
 import {Router} from '@angular/router';
 import {CommonUtil} from "../../services/commonUtil";
-import {User} from "../../user";
+import {User} from "../../common/user";
 import {UserService} from "../../services/user.service";
 
 @Component({

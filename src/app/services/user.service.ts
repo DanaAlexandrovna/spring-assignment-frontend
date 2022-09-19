@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
-import {User, UserUpdate} from "../user";
+import {User, UserUpdate} from "../common/user";
 
 @Injectable({
   providedIn: 'root'
@@ -14,11 +14,7 @@ export class UserService {
   }
 
   public get(): Observable<any> {
-    // fetch(`${this.baseUrl}`)
-    //   .then(res => res.json())
-    //   .then(json => console.log(json as User[]))
-    //   .catch(err => console.error(err));
-    return this.httpClient.get<User[]>(`${this.baseUrl}`);
+    return this.httpClient.get<User[]>(`${this.baseUrl}/all`);
   }
 
   public getById(id: number): Observable<any> {

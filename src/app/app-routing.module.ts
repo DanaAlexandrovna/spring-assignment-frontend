@@ -2,7 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {LoginUserComponent} from "./login/login-user.component";
 import {RegisterUserComponent} from "./register-user/register-user.component";
-import {TicketsListComponent} from "./tickets-list/tickets-list.component";
+import {TicketsListComponent} from "./tickets/tickets-list.component";
+import {TicketsBookComponent} from "./tickets/book/tickets-book.component";
 import { ModalModule } from 'ngx-bootstrap/modal'
 import {HomePageComponent} from "./home-page/home-page.component";
 
@@ -32,6 +33,7 @@ const routes: Routes = [
   {path: 'login', component: LoginUserComponent},
   {path: 'register', component: RegisterUserComponent},
   {path: 'tickets', component: TicketsListComponent},
+  {path: 'tickets/book', component: TicketsBookComponent},
   {path: 'home', component: HomePageComponent},
   {path:'', component: HomePageComponent}
 ];
