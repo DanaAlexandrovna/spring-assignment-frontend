@@ -3,7 +3,7 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {CommonUtil} from "../../../services/commonUtil";
 import {AddressService} from "../../../services/address.service";
-import {AddressUpdate} from "../../../address";
+import {AddressUpdate} from "../../../common/address";
 
 
 @Component({

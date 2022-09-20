@@ -1,5 +1,5 @@
 import {Injectable} from "@angular/core";
-import {User, UserAuthority} from "../user";
+import {User, UserAuthority} from "../common/user";
 
 @Injectable({
   providedIn: 'root'
@@ -26,7 +26,7 @@ export class CommonUtil {
     this.loginUser = loginUser;
   }
 
-  public getLoginUser(): any {
+  public getLoginUser(): User | null {
     return this.loginUser;
   }
 

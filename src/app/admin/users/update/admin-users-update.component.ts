@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 
 import {ActivatedRoute, Router} from '@angular/router';
-import {UserUpdate} from "../../../user";
+import {UserUpdate} from "../../../common/user";
 import {UserService} from "../../../services/user.service";
 import {CommonUtil} from "../../../services/commonUtil";
 

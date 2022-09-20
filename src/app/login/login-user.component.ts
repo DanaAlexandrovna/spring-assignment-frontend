@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {User} from "../user";
-import {RegisterService} from "../register.service";
-import {Login} from "../login";
+import {User} from "../common/user";
+import {RegisterService} from "../services/register.service";
+import {Login} from "../common/login";
 import {CommonUtil} from "../services/commonUtil";
 import {Router} from "@angular/router";
 

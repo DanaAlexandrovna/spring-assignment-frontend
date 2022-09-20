@@ -1,27 +1,37 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from "@angular/common/http";
-import {Observable } from "rxjs";
-import { Ticket } from "../common/ticket";
-import { map } from "rxjs/operators";
-import {Review} from "../common/review";
-import {User} from "../user";
+import {Injectable} from '@angular/core';
+import {HttpClient} from "@angular/common/http";
+import {Observable} from "rxjs";
+import {Ticket, TicketUpdate} from "../common/ticket";
+
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class TicketService {
 
-  private baseUrl="http://localhost:8080/users";
+  private baseUrl = "http://localhost:8080/tickets";
 
-  constructor(private httpClient: HttpClient) { }
-
-  public getTickets(): Observable<any> {
-    return this.httpClient.get<User[]>(`${this.baseUrl}`);
-  }
-  public getTicket(id: number): Observable<any> {
-    return this.httpClient.get<User>(`${this.baseUrl}/${id}`);
+  constructor(private httpClient: HttpClient) {
   }
 
-  // TODO CRUD for the other operations
+  public get(): Observable<any> {
+    return this.httpClient.get<Ticket[]>(`${this.baseUrl}/all`);
+  }
 
+  public getById(id: number): Observable<any> {
+    return this.httpClient.get<Ticket>(`${this.baseUrl}/${id}`);
+  }
+
+  public add(user: Ticket): Observable<Object> {
+    return this.httpClient.post(`${this.baseUrl}/add`, user);
+  }
+
+  public update(id: number, user: TicketUpdate): Observable<Object> {
+    return this.httpClient.put(`${this.baseUrl}/update`, user);
+  }
+
+  public delete(id: number) {
+    return this.httpClient.delete(`${this.baseUrl}/delete/${id}`);
+  }
 }
