@@ -1,11 +1,12 @@
 export class Address {
-  id: 3;
+  id: number;
   country : string;
   address: string;
+  airport?: object
 // trebuie?  tickets: any[]; // TODO use actual tickets ??
 }
 export class AddressUpdate {
-  id: 3;
+  id: number;
   country : string;
   address: string;
 }

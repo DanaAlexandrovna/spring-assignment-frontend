@@ -7,7 +7,7 @@ import {AddressUpdate} from "../../../address";
 
 
 @Component({
-  selector: 'admin-users-update',
+  selector: 'admin-addresses-update',
   templateUrl: './admin-addresses-update.component.html',
   styleUrls: ['./admin-addresses-update.component.css']
 })
@@ -36,8 +36,8 @@ export class AdminAddressesUpdate implements OnInit {
       (data: any) => {
         if (data) {
           //? here is
-          delete data.authorities
-          delete data.tickets
+          delete data['@id']
+          delete data.airport
           this.address = data as AddressUpdate;
           console.log(`fetched address by id=${id}`, this.address) // TODO no data found?
         }

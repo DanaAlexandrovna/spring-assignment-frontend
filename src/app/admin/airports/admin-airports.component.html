@@ -1,0 +1,29 @@
+<link rel="stylesheet" href="admin-airports.component.css">
+<div class="row admin-airports-container">
+  <table class="admin-airports">
+    <thead>
+    <th>id</th>
+    <th>Update/Delete</th>
+    <th>Name</th>
+    <th>Address ID</th>
+    </thead>
+    <tr class="user-item"
+        *ngFor="let airport of airports"
+    >
+      <td>{{airport.id}}</td>
+      <td style="display: flex; flex-direction: column; gap: 5px;">
+        <button class="btn btn-primary" (click)="update(airport.id)">
+          Update
+        </button>
+        <button class="btn btn-danger" (click)="delete(airport.id)">
+          Delete
+        </button>
+
+      </td>
+      <td>{{airport.name}}</td>
+      <td>{{airport.address_id}}</td>
+    </tr>
+  </table>
+
+</div>
+

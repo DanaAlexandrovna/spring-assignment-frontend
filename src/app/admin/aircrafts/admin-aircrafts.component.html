@@ -1,0 +1,33 @@
+<link rel="stylesheet" href="admin-aircrafts.component.css">
+<div class="row admin-aircrafts-container">
+  <table class="admin-aircrafts">
+    <thead>
+    <th>Id</th>
+    <th>Update/Delete</th>
+    <th>Make</th>
+    <th>Number of seats</th>
+    
+    </thead>
+    <tr class="aircraft-item"
+        *ngFor="let aircraft of aircrafts"
+    >
+
+
+      <td>{{aircraft.id}}</td>
+      <td style="display: flex; flex-direction: column; gap: 5px;">
+        <button class="btn btn-primary" (click)="update(aircraft.id)">
+          Update
+        </button>
+        <button class="btn btn-danger" (click)="delete(aircraft.id)">
+          Delete
+        </button>
+      </td>
+      <td>{{aircraft.make}}</td>
+      <td>{{aircraft.numberOfSeats}}</td>
+  
+    </tr>
+  </table>
+
+
+</div>
+

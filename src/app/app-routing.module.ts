@@ -15,9 +15,13 @@ import {HomePageComponent} from "./home-page/home-page.component";
 
 import {AdminUsers} from './admin/users/admin-users.component'
 import {AdminAddresses} from './admin/addresses/admin-addresses.component'
+import {AdminAirports} from './admin/airports/admin-airports.component'
+import {AdminAircrafts} from './admin/aircrafts/admin-aircrafts.component'
 import {BrowserModule} from "@angular/platform-browser";
 import {AdminUsersUpdate} from "./admin/users/update/admin-users-update.component";
 import {AdminAddressesUpdate} from "./admin/addresses/update/admin-addresses-update.component";
+import {AdminAirportsUpdate} from "./admin/airports/update/admin-airports-update.component";
+import {AdminAircraftsUpdate} from "./admin/aircrafts/update/admin-aircrafts-update.component";
 // // TODO airports, aircrafts etc   but you must be aware that airports should reference a address (foreign key) so you must use a html select
 // import {AdminAirports} from './admin/users/users.component'
 //import {AdminAddresses} from '.admin/addresses/update.component'
@@ -29,6 +33,10 @@ const routes: Routes = [
   {path: 'admin/users/update/:id', component: AdminUsersUpdate},
   {path: 'admin/addresses', component: AdminAddresses},
   {path: 'admin/addresses/update/:id', component: AdminAddressesUpdate},
+  {path: 'admin/airports', component: AdminAirports},
+  {path: 'admin/airports/update/:id', component: AdminAirportsUpdate},
+  {path: 'admin/aircrafts', component: AdminAircrafts},
+  {path: 'admin/aircrafts/update/:id', component: AdminAircraftsUpdate},
   {path: 'login', component: LoginUserComponent},
   {path: 'register', component: RegisterUserComponent},
   {path: 'tickets', component: TicketsListComponent},

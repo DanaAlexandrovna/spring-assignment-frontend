@@ -1,0 +1,31 @@
+<link rel="stylesheet" href="admin-airports-update.component.css">
+<div class="row admin-airports-container">
+  <form *ngIf="airport" class="admin-airports">
+    <p>id: {{airport.id}}</p>
+
+
+    <div>
+      <label>name</label>
+      <input type="text" name="name" [(ngModel)]="airport.name">
+    </div>
+
+    <div>
+      <label>address</label>
+      <select name="address_id" id="address_id" [(ngModel)]="airport.address_id">
+        <option *ngFor="let address of addresses" value="{{address.id}}" [selected]="address.id == airport.address_id">
+          Address ID={{address.id}}, {{address.country}}, {{address.address}}
+        </option>
+        <!-- <option *ngIf="addresses?.length > 0" value="{{addresses[0].id}}">
+
+        </option> -->
+
+      </select>
+    </div>
+
+    <button class="btn btn-primary" type="button" (click)="update()">Update</button>
+
+  </form>
+
+
+</div>
+

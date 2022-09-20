@@ -1,0 +1,23 @@
+<link rel="stylesheet" href="admin-aircrafts-update.component.css">
+<div class="row admin-aircrafts-update-container">
+  <form *ngIf="aircraft" class="admin-aircrafts">
+    <p>id: {{aircraft.id}}</p>
+
+
+    <div>
+      <label>Make</label>
+      <input type="text" name="make" [(ngModel)]="aircraft.make">
+    </div>
+
+    <div>
+      <label>Number of seats </label>
+      <input type="text" name="numberOfSeats" [(ngModel)]="aircraft.numberOfSeats">
+    </div>
+
+    <button class="btn btn-primary" type="button" (click)="update()">Update</button>
+
+  </form>
+
+
+</div>
+
