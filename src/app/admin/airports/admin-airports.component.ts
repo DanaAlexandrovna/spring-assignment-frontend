@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {CommonUtil} from "../../services/commonUtil";
 import {AirportService} from "../../services/airport.service";
-import { Airport } from 'src/app/airport';
+import { Airport } from 'src/app/common/airport';
 
 @Component({
   selector: 'admin-airports',

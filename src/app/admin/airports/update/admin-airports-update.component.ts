@@ -3,9 +3,10 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {CommonUtil} from "../../../services/commonUtil";
 import {AirportService} from "../../../services/airport.service";
-import {AirportUpdate} from "../../../airport";
-import { Address } from 'src/app/address';
+import {AirportUpdate} from "../../../common/airport";
+
 import { AddressService } from 'src/app/services/address.service';
+import {Address} from "../../../common/address";
 
 
 @Component({
@@ -40,7 +41,7 @@ export class AdminAirportsUpdate implements OnInit {
           //? here is
           for (const address of data) {
             delete address['@id']
-            delete address.airport
+            delete address['airport']
           }
           this.addresses = data as Address[];
         }
@@ -56,7 +57,7 @@ export class AdminAirportsUpdate implements OnInit {
         if (data) {
           //? here is
           delete data['@id']
-          delete data.airport
+          delete data['airport']  // also works when data.airport does not exist in the typescript definition
           this.airport = data as AirportUpdate;
           console.log(`fetched airport by id=${id}`, this.airport) // TODO no data found?
         }

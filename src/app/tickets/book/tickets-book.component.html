@@ -1,8 +1,48 @@
 <link rel="stylesheet" href="tickets-book.component.css">
 <div class="row admin-addresses-container">
   <div class="user-tickets">
-     <h1>Book your ticket</h1>
+    <h1>Book your ticket</h1>
 
+    <form action="false">
+      <div>
+        <label for="fromAirport">Departure</label>
+        <select name="fromAirport" id="fromAirport" [(ngModel)]="fromAirportId" (change)="fromAirportIdChanged()">
+          <option
+            *ngFor="let airport of airports"
+            value="{{airport.id}}">
 
+            {{airport.name}}
+          </option>
+
+        </select>
+      </div>
+      <div>
+        <label for="toAirport">Destination</label>
+        <select name="toAirport" id="toAirport" [(ngModel)]="toAirportId">
+          <option
+            *ngFor="let airport of toAirports"
+            value="{{airport.id}}">{{airport.name}}</option>
+        </select>
+      </div>
+
+      <button class="btn btn-primary" (click)="loadSearchedFlights()">Load Flights</button>
+    </form>
+
+    <div *ngIf="this.searchedFlights" id="flights">
+      <div *ngFor="let flight of searchedFlights">
+        <!--        TODO error:-->
+        <div>
+          {{flight.fromAirport.name}} -> {{flight.toAirport.name}}
+        </div>
+        <b>
+          Departure at
+          {{flight.departure}}
+        </b>
+        <div>
+          <button class="btn btn-outline-primary" (click)="bookFlight(flight)">Book</button>
+        </div>
+      </div>
+      <br>
+    </div>
   </div>
 </div>

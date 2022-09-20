@@ -100,21 +100,7 @@ export class TicketsListComponent implements OnInit {
 
         if (data) {
 
-          // use countAtIds and a sync wait function to create a list of all ids
-          let [cntIds, ids] = this.countAtIds(data);
-
-          // start filling the identity map:
-          this.mapIdentityUsingAtId(data)
-          // while you didn't fill all cntIds ids inside the identityMap,
-          //  wait 10 more millis:
-          while (Object.keys(this.identityMap).length < cntIds) {
-            ((ms) => {
-              let start = Date.now(), now = start;
-              while (now - start < ms) {
-                now = Date.now();
-              }
-            })(10)
-          }
+          this.loadAtIds(data)
 
           console.log('ID map:', this.identityMap)
           this.tickets = [];
@@ -201,4 +187,22 @@ export class TicketsListComponent implements OnInit {
   // }
 
 
+  private loadAtIds(data: object) {
+
+    // use countAtIds and a sync wait function to create a list of all ids
+    let [cntIds, ids] = this.countAtIds(data);
+
+    // start filling the identity map:
+    this.mapIdentityUsingAtId(data)
+    // while you didn't fill all cntIds ids inside the identityMap,
+    //  wait 10 more millis:
+    while (Object.keys(this.identityMap).length < cntIds) {
+      ((ms) => {
+        let start = Date.now(), now = start;
+        while (now - start < ms) {
+          now = Date.now();
+        }
+      })(10)
+    }
+  }
 }

@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 
 import {ActivatedRoute, Router} from '@angular/router';
-import { AircraftUpdate } from 'src/app/aircraft';
+import { AircraftUpdate } from 'src/app/common/aircraft';
 
 import {AircraftService} from "../../../services/aircraft.service";
 import {CommonUtil} from "../../../services/commonUtil";

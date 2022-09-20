@@ -3,7 +3,7 @@ import {TicketService} from "../../services/ticket.service";
 import {Router} from '@angular/router';
 import {CommonUtil} from "../../services/commonUtil";
 import {AircraftService} from "../../services/aircraft.service";
-import { Aircraft } from 'src/app/aircraft';
+import { Aircraft } from 'src/app/common/aircraft';
 
 @Component({
   selector: 'admin-aircrafts',
