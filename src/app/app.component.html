@@ -12,9 +12,9 @@
       <!--      Am grupat optiunile de navigare care apar in momentul logarii:-->
       <div *ngIf="commonUtil.getLoginUser()" class="d-flex gap-2">
         <!--        TODO for user:-->
-        <a routerLink="/tickets" routerLinkActive="active" class="btn btn-close-white">Your Tickets</a>
-        <a routerLink="/addTicket" routerLinkActive="active" class="btn btn-close-white">Book a ticket</a>
         <a routerLink="/home" routerLinkActive="" class="btn btn-close-white">Home</a>
+        <a routerLink="/tickets" routerLinkActive="" class="btn btn-close-white">Your Tickets</a>
+        <a routerLink="/tickets/book" routerLinkActive="" class="btn btn-close-white">Book a ticket</a>
         <!--        TODO ADMIN:-->
         <!--        <a routerLink="/tickets" routerLinkActive="" class="btn btn-close-white">Users</a>-->
         <!--        <a routerLink="/addresses" routerLinkActive="active" class="btn btn-close-white">Addresses</a>-->
