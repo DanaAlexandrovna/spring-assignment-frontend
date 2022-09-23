@@ -23,6 +23,10 @@ import {AdminUsersUpdate} from "./admin/users/update/admin-users-update.componen
 import {AdminAddressesUpdate} from "./admin/addresses/update/admin-addresses-update.component";
 import {AdminAirportsUpdate} from "./admin/airports/update/admin-airports-update.component";
 import {AdminAircraftsUpdate} from "./admin/aircrafts/update/admin-aircrafts-update.component";
+import { AdminFlights } from './admin/flights/admin-flights.component';
+import { AdminFlightsUpdate } from './admin/flights/update/admin-flights-update.component';
+import { AdminTickets } from './admin/tickets/admin-tickets.component';
+import { AdminTicketsUpdate } from './admin/tickets/update/admin-tickets-update.component';
 // // TODO airports, aircrafts etc   but you must be aware that airports should reference a address (foreign key) so you must use a html select
 // import {AdminAirports} from './admin/users/users.component'
 //import {AdminAddresses} from '.admin/addresses/update.component'
@@ -38,6 +42,10 @@ const routes: Routes = [
   {path: 'admin/airports/update/:id', component: AdminAirportsUpdate},
   {path: 'admin/aircrafts', component: AdminAircrafts},
   {path: 'admin/aircrafts/update/:id', component: AdminAircraftsUpdate},
+  {path: 'admin/flights', component: AdminFlights},
+  {path: 'admin/flights/update/:id', component: AdminFlightsUpdate},
+  {path: 'admin/tickets', component: AdminTickets},
+  {path: 'admin/tickets/update/:id', component: AdminTicketsUpdate},
   {path: 'login', component: LoginUserComponent},
   {path: 'register', component: RegisterUserComponent},
   {path: 'tickets', component: TicketsListComponent},

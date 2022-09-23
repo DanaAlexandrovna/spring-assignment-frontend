@@ -8,6 +8,11 @@ export class Address {
   address: string;
 }
 
+export class AirportNoString {
+  id!: number;
+  name: string;
+  address: Address;
+}
 export class Airport {
   id!: number;
   name: string;

@@ -1,0 +1,46 @@
+<link rel="stylesheet" href="admin-flights-update.component.css">
+<div class="row admin-flights-container">
+  <form *ngIf="flight" class="admin-flights">
+    <p>id: {{flight.id}}</p>
+
+
+    <div>
+      <label>Departure</label>
+      <input type="text" name="departure" [(ngModel)]="flight.departure">
+    </div>
+
+    <div>
+      <label>Price</label>
+      <input type="text" name="price" [(ngModel)]="flight.price">
+    </div>
+
+    <div>
+      <label>From Airport</label>
+      <select name="from_airport_id" id="from_airport_id" [(ngModel)]="flight.from_airport_id">
+        <option *ngFor="let airport of airports" value="{{airport.id}}" 
+         [selected]="airport.id  == flight.from_airport_id"> 
+           Airport ID={{airport.id}}, {{airport.address.country}} ({{airport.name}})
+            <!-- <option *ngIf="airports?.length > 0" value="{{airports[0].id}}">
+
+        </option> -->
+
+      </select>
+    </div>
+
+    <div>
+      <label>To Airport</label>
+      <select name="to_airport_id" id="to_airport_id" [(ngModel)]="flight.to_airport_id">
+        <option *ngFor="let airport of airports" value="{{airport.id}}" 
+        [selected]="airport.id  == flight.to_airport_id">
+          Airport ID={{airport.id}}, {{airport.address.country}} ({{airport.name}})
+         <!-- <option *ngIf="airports?.length > 0" value="{{airports[0].id}}">
+
+        </option> --> 
+
+      </select>
+    </div>
+
+    <button class="btn btn-primary" type="button" (click)="update()">Update</button>
+
+  </form>
+</div>

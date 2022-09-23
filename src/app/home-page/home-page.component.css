@@ -9,7 +9,7 @@
 header{
   -webkit-background-size: cover;
   background-size: cover;
-  background: url("elib.png") center center;
+  background: url("/assets/flight.jpg") center center;
   position: relative;
 }
 

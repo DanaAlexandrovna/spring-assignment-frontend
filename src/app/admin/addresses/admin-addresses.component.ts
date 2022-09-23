@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, enableProdMode, OnInit} from '@angular/core';
 import {Address, Ticket} from "../../common/ticket";
 import {Router} from '@angular/router';
 import {CommonUtil} from "../../services/commonUtil";
@@ -23,10 +23,6 @@ export class AdminAddresses implements OnInit {
   ngOnInit(): void {
     // ???
     this.loadTickets();
-
-
-
-
   }
 
   // ?? or load Addresses
@@ -34,14 +30,12 @@ export class AdminAddresses implements OnInit {
 
     this.addressService.get().subscribe(
       (data: any) => {
-        console.log('fetched all addresses:') // TODO no data found?
+        console.log('fetched all addresses:')
         if (data.content) {
           this.addresses = data.content;
         }
       }
     )
-
-
   }
 
 

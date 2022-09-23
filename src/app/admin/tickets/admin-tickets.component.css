@@ -1,0 +1,21 @@
+.admin-tickets-container {
+        overflow-x: scroll;
+        width: 90vw;
+        margin-left: 5vw;
+}
+
+.admin-tickets {
+}
+
+th, td {
+  padding: 15px;
+}
+
+
+.admin-tickets thead {
+  max-width: 80vw;
+}
+
+.admin-tickets .address-item {
+  overflow-x: scroll;
+}

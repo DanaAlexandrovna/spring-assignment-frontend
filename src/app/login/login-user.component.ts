@@ -30,7 +30,7 @@ export class LoginUserComponent implements OnInit {
       }
       console.log(data);
       this.commonUtil.setLoginUser(data);
-      this.router.navigate(["/tickets"]);
+      this.router.navigate(['/home']);
     });
 
     //, error=>alert("User is not register")

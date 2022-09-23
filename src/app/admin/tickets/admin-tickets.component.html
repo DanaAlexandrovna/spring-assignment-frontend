@@ -1,0 +1,29 @@
+<link rel="stylesheet" href="admin-tickets.component.css">
+<div class="row admin-tickets-container">
+  <table class="admin-tickets">
+    <thead>
+    <th>id</th>
+    <th>Update/Delete</th>
+    <th>Flight ID</th>
+    <th>User ID</th>
+    <th>Aircraft ID</th>
+    </thead>
+    <tr class="user-item"
+        *ngFor="let ticket of tickets"
+    >
+      <td>{{ticket.id}}</td>
+      <td style="display: flex; flex-direction: column; gap: 5px;">
+        <button class="btn btn-primary" (click)="update(ticket.id)">
+          Update
+        </button>
+        <button class="btn btn-danger" (click)="delete(ticket.id)">
+          Delete
+        </button>
+        
+      </td>
+      <td>{{ticket.flight_id}}</td>
+      <td>{{ticket.user_id}}</td>
+      <td>{{ticket.aircraft_id}}</td>
+    </tr>
+  </table>
+</div>

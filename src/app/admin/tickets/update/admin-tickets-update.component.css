@@ -1,10 +1,10 @@
-.admin-airports-container {
+.admin-tickets-container {
     overflow-x: scroll;
     width: 90vw;
     margin-left: 5vw;
   }
   
-  .admin-airports {
+  .admin-tickets {
   }
   
   th, td {
@@ -12,12 +12,10 @@
   }
   
   
-  .admin-airports thead {
+  .admin-tickets thead {
     max-width: 80vw;
   }
   
-  .admin-airports .user-item {
+  .admin-tickets .user-item {
     overflow-x: scroll;
   }
-  
-  

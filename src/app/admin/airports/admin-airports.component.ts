@@ -26,7 +26,7 @@ export class AdminAirports implements OnInit {
 
   }
 
-  // ?? or load Airportes
+  // ?? or load Flightes
   loadTickets() {
 
     this.airportService.get().subscribe(
@@ -40,10 +40,7 @@ export class AdminAirports implements OnInit {
         }
       }
     )
-
-
   }
-
 
   delete(id: number) {
     let doDelete = confirm('PERMANENTLY delete the airport?')

@@ -1,0 +1,33 @@
+<link rel="stylesheet" href="admin-tickets-update.component.css">
+<div class="row admin-tickets-container">
+  <form *ngIf="ticket" class="admin-tickets">
+
+    <h2>TICKET</h2>
+
+    <div>
+      <label>User ID</label>
+      <select name="user_id" id="user_id" [(ngModel)]="ticket.user_id">
+        <option *ngFor="let user of user" value="{{user.id}}" [selected]="user.id == ticket.user_id">
+          User ID={{user.id}}, {{user.username}}, {{user.email}}
+        </option>
+        <!-- <option *ngIf="addresses?.length > 0" value="{{addresses[0].id}}">
+        </option> -->
+      </select>
+    </div>
+
+    <div>
+      <label>Aircraft ID</label>
+      <select name="aircraft_id" id="aircraft_id" [(ngModel)]="ticket.aircraft_id">
+        <option *ngFor="let aircraft of aircraft" value="{{aircraft.id}}"
+          [selected]="aircraft.id == ticket.aircraft_id">
+          User ID={{aircraft.id}}, {{aircraft.make}}
+        </option>
+        <!-- <option *ngIf="addresses?.length > 0" value="{{addresses[0].id}}">
+        </option> -->
+      </select>
+    </div>
+
+    <button class="btn btn-primary" type="button" (click)="update()">Update</button>
+
+  </form>
+</div>

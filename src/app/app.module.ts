@@ -22,6 +22,11 @@ import {AdminAircrafts} from "./admin/aircrafts/admin-aircrafts.component";
 import {AdminAircraftsUpdate} from "./admin/aircrafts/update/admin-aircrafts-update.component";
 import {AdminAirports} from "./admin/airports/admin-airports.component";
 import {AdminAirportsUpdate} from "./admin/airports/update/admin-airports-update.component";
+import { AdminFlights } from './admin/flights/admin-flights.component';
+import { AdminFlightsUpdate } from './admin/flights/update/admin-flights-update.component';
+import { AdminTickets } from './admin/tickets/admin-tickets.component';
+import { AdminTicketsUpdate } from './admin/tickets/update/admin-tickets-update.component';
+
 
 // TODO always add the components you use to declarations:
 @NgModule({
@@ -41,7 +46,10 @@ import {AdminAirportsUpdate} from "./admin/airports/update/admin-airports-update
 
     TicketsListComponent,
     TicketsBookComponent,
-
+    AdminFlights,
+    AdminFlightsUpdate,
+    AdminTickets,
+    AdminTicketsUpdate,
   ],
   imports: [
     BrowserModule,
